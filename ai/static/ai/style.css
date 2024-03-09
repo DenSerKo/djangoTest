@@ -1,9 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font: 16px system-ui;
     color: azure;
     background: black;
 }
-main {
-    display: grid;
+header {
+    padding: 2em 0;
+}
+header nav ul {
+    display: flex;
+    justify-content: left;
+    list-style: none;
+}
+header nav ul li a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    border: 1px solid white;
+    padding: .5em 2em;
+}
+header nav ul li a:hover {
+    background: #393939;
+}
+.container {
     padding: 2em;
+}
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+}
+h1 {
+    margin-bottom: 1.5em;
+}
+h2 {
+    margin-bottom: 1em;
+}
+p {
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 500px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+    header nav ul {
+        flex-direction: column;
+    }
 }
