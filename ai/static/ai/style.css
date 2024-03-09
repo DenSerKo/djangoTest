@@ -1,0 +1,9 @@
+body {
+    font: 16px system-ui;
+    color: azure;
+    background: black;
+}
+main {
+    display: grid;
+    padding: 2em;
+}
