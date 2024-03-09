@@ -10,6 +10,8 @@ body {
 }
 header {
     padding: 2em 0;
+    background-image: url(../ai/header_bg.jpg);
+    background-position: center;
 }
 header nav ul {
     display: flex;
@@ -34,6 +36,7 @@ header nav ul li a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2em;
+    line-height: 1.6em;
 }
 h1 {
     margin-bottom: 1.5em;
@@ -52,4 +55,5 @@ p {
     header nav ul {
         flex-direction: column;
     }
+
 }
