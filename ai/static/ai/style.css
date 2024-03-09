@@ -11,7 +11,8 @@ body {
 header {
     padding: 2em 0;
     background-image: url(../ai/header_bg.jpg);
-    background-position: center;
+    background-position: 25% 25%;
+    background-size: cover;
 }
 header nav ul {
     display: flex;
