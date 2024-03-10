@@ -24,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xc($-(5tlg(u+vq2j1%u7_p7t0@)9ff3-$ash%$^b&5a@83(lo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ['djangotest-zasu.onrender.com', 'localhost', '127.0.0.1']
 
