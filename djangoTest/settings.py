@@ -24,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xc($-(5tlg(u+vq2j1%u7_p7t0@)9ff3-$ash%$^b&5a@83(lo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+# DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['djangotest-zasu.onrender.com', 'localhost', '127.0.0.1']
 
@@ -78,28 +78,22 @@ WSGI_APPLICATION = 'djangoTest.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
-# if DEBUG:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': BASE_DIR / 'db.sqlite3',
-#         }
-#     }
-# else:
-#     DATABASES = {
-#         'default': dj_database_url.config(
-#             # Replace this value with your local database's connection string.
-#             default='postgresql://postgres:postgres@localhost:5432/djangoTest',
-#             conn_max_age=600
-#         )
-#     }
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.config(
+            # Replace this value with your local database's connection string.
+            default='postgres://root:Bu4vsNMIPGtVCDQGmYNeUSxVoA0n3vyp@dpg-cnn04u6d3nmc73ct3de0-a/django_test_1iil',
+            conn_max_age=600
+        )
+    }
 
 
 # Password validation
