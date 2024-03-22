@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path("", views.IndexView.as_view(), name="index"),
-    path("chatgpt/", views.chatgpt, name="chatgpt"),
+    path("story/", views.story, name="story"),
+    path("questions/", views.questions, name="questions"),
 ]

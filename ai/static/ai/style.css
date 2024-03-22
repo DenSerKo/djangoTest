@@ -3,58 +3,53 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    height: 100dvh;
+}
 body {
     font: 16px system-ui;
     color: azure;
     background: black;
-}
-header {
-    padding: 2em 0;
-    background-image: url(../ai/header_bg.jpg);
-    background-position: 25% 25%;
-    background-size: cover;
-}
-header nav ul {
-    display: flex;
-    justify-content: left;
-    list-style: none;
-}
-header nav ul li a {
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: block;
-    border: 1px solid white;
-    padding: .5em 2em;
-}
-header nav ul li a:hover {
-    background: #393939;
+    outline: 2px solid blue;
 }
 .container {
     padding: 2em;
 }
-.content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2em;
-    line-height: 1.6em;
-}
 h1 {
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
 }
 h2 {
     margin-bottom: 1em;
 }
 p {
     margin-bottom: 1em;
+    line-height: 1.5em;
 }
-
+.centered {
+    display: flex;
+    height: 100dvh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+form input {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1.2em;
+}
+form button {
+    padding: 1em 1.4em;
+}
+.centered a {
+    display: block;
+}
+.centered a img {
+    width: 100%;
+}
 @media screen and (max-width: 500px) {
-    .content {
-        grid-template-columns: 1fr;
-    }
-    header nav ul {
-        flex-direction: column;
-    }
 
 }

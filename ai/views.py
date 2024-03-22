@@ -1,4 +1,5 @@
 from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from g4f.client import Client
@@ -21,11 +22,29 @@ def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 
 
-def chatgpt(request):
+def questions(request):
     client = Client()
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         provider='ChatgptNext',
-        messages=[{"role": "user", "content": "Что вреднее кальян или сигареты?"}],
+        messages=[{"role": "user", "content": "Задай пять вопросов ребенку и перечисли их через точку с запятой."}],
     )
-    return JsonResponse({'message': response.choices[0].message.content})
+    questions = response.choices[0].message.content.split(';')
+    return render(request, context={'questions': questions}, template_name='ai/questions.html')
+
+
+def story(request):
+    if request.method == 'POST':
+        answers = []
+        for key, value in request.POST.items():
+            if key != 'csrfmiddlewaretoken':
+                answers.append(value)
+        content = f"Придумай смешную историю со словами Милослава, {', '.join(answers)}"
+        client = Client()
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            provider='ChatgptNext',
+            messages=[{"role": "user", "content": content}],
+        )
+        story = response.choices[0].message.content
+        return render(request, context={'story': story}, template_name='ai/story.html')

@@ -1,75 +1,11 @@
+{% extends 'ai/base.html' %}
 {% load static %}
-{% now 'Y' as current_year %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'ai/style.css' %}">
-    <title>Аленушка жопка</title>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Аленушкина жопка!</h1>
-            <nav>
-                <ul>
-                    <li><a href="">Левая булочка</a></li>
-                    <li><a href="">Правая булочка</a></li>
-                    <li><a href="">Мягенькая</a></li>
-                    <li><a href="">Упругая</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="content">
-            <article>
-                <h2>Lorem ipsum dolor sit.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi dignissimos doloremque earum
-                    est et fugiat illo ipsa, laboriosam maiores nihil, nobis optio, praesentium quasi quidem
-                    reprehenderit rerum ut voluptatem.</p>
-                <p>A amet autem cum dignissimos distinctio enim error eveniet fuga, impedit itaque iusto nemo nesciunt
-                    nostrum pariatur quasi, quo sequi tempora temporibus veritatis vitae. Autem delectus deleniti eius
-                    natus praesentium.</p>
-                <p>Adipisci aliquid assumenda autem, commodi consequatur corporis dignissimos dolore dolorem enim illo
-                    illum in mollitia natus nisi nobis odit perferendis, praesentium, quasi quo repellendus sint sit
-                    suscipit vitae voluptatem voluptates!</p>
-                <p>Accusamus ad animi architecto autem, deleniti ducimus error id illo ipsam iste itaque labore magnam
-                    maxime officia omnis, possimus quidem reiciendis repellendus reprehenderit sequi similique sunt
-                    velit veniam. Deleniti, numquam.</p>
-            </article>
-            <article>
-                <h2>Accusantium exercitationem similique sunt.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, accusamus at blanditiis consectetur
-                    corporis eos et, eum eveniet, illo incidunt laudantium libero minima nemo nostrum possimus qui sunt
-                    tenetur veritatis!</p>
-                <p>Adipisci animi at autem blanditiis corporis cumque debitis deleniti, distinctio dolores ea excepturi
-                    hic ipsa minus neque non porro quisquam rem tempore totam ut vel voluptas voluptates voluptatum!
-                    Distinctio, illum.</p>
-                <p>Architecto atque commodi cupiditate deserunt distinctio doloribus esse fugit harum in iure, labore
-                    laboriosam magni modi molestiae, nam, perferendis possimus quaerat repellendus reprehenderit
-                    similique sunt suscipit tenetur veniam vero voluptate.</p>
-                <p>Adipisci animi aperiam architecto facilis laboriosam provident rem. A accusamus adipisci aspernatur,
-                    beatae deleniti dolore dolorum eligendi ex fuga, illo, magni maiores maxime minus nulla quibusdam
-                    quo totam vel veritatis!</p>
-            </article>
-            <article>
-                <h2>Distinctio provident quo temporibus?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consectetur corporis hic labore quae
-                    quisquam voluptas. Asperiores, blanditiis consequuntur, deserunt, exercitationem expedita id nihil
-                    officiis quisquam similique sit suscipit voluptatibus!</p>
-                <p>Dolore, esse est excepturi fuga harum illo, impedit ipsam ipsum minus nam nesciunt quaerat vero
-                    voluptate. Ad autem, dignissimos dolore, exercitationem facere fuga ipsum laudantium mollitia non
-                    nostrum quam tenetur.</p>
-                <p>Aut dolor laborum reiciendis. Deleniti dolor, hic mollitia omnis quae quia quo quod rem saepe
-                    veritatis! Amet animi cum cumque delectus deserunt dolorem harum hic impedit itaque, vero. In,
-                    saepe.</p>
-                <p>Adipisci dolores dolorum esse exercitationem facere hic, ipsum molestiae nesciunt nisi quam repellat
-                    reprehenderit sint sunt suscipit tenetur ut voluptatum! Animi cupiditate dolorem doloribus fugit
-                    iste, laborum nisi odit reprehenderit.</p>
-            </article>
-        </div>
+{% block title %}Главная страница{% endblock %}
+{% block content %}
+    <div class="centered">
+        <h1>Ответь на мои вопросики!</h1>
+        <a href="{% url 'questions' %}">
+            <img src="{% static 'ai/capybaraIndex.png' %}" alt="Капибара">
+        </a>
     </div>
-</body>
-</html>
+{% endblock %}
