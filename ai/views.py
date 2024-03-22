@@ -1,5 +1,7 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.views.generic import TemplateView
+
+from g4f.client import Client
 
 
 class IndexView(TemplateView):
@@ -17,3 +19,13 @@ def results(request, question_id):
 
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
+
+
+def chatgpt(request):
+    client = Client()
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        provider='ChatgptNext',
+        messages=[{"role": "user", "content": "Что вреднее кальян или сигареты?"}],
+    )
+    return JsonResponse({'message': response.choices[0].message.content})
