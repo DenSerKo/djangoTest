@@ -34,13 +34,14 @@ body {
     padding: 2em;
 }
 img {
-    width: 70%;
+    width: 50%;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Roboto Slab", serif;
 }
 h1 {
     margin-bottom: 1.2em;
+    font-size: 1.2em;
 }
 h2 {
     margin-bottom: 1em;
