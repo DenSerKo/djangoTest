@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from g4f.client import Client
+from g4f.cookies import set_cookies
 
 
 class IndexView(TemplateView):
@@ -50,4 +51,12 @@ def story(request):
             messages=[{"role": "user", "content": content}],
         )
         story = response.choices[0].message.content
+        # set_cookies(".google.com", {
+        #     "__Secure-1PSID": "cookie value"
+        # })
+        # response_img = client.images.generate(
+        #     model="gemini",
+        #     prompt="a white siamese cat",
+        # )
+        # image_url = response_img.data[0].url
         return render(request, context={'story': story}, template_name='ai/story.html')

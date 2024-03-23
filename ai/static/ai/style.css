@@ -26,9 +26,9 @@ html, body {
 body {
     font: 16px "Montserrat", sans-serif;
     color: #ffd0d0;
-    background-color: #4d0000;
-    opacity: 0.9;
-    background-image: radial-gradient(circle at center center, #000000, #4d0000), repeating-radial-gradient(circle at center center, #000000, #000000, 25px, transparent 50px, transparent 25px);
+    background-color: #620000;
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, #510000, #620000), repeating-radial-gradient(circle at center center, #510000, #510000, 31px, transparent 62px, transparent 31px);
     background-blend-mode: multiply;
     outline: 2px solid blue;
 }
