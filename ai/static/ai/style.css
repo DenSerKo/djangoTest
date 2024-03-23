@@ -28,7 +28,7 @@ body {
     color: #ffd0d0;
     background-color: #7f0000;
     opacity: 1;
-    background-image: radial-gradient(circle at center center, #330000, #7f0000), repeating-radial-gradient(circle at center center, #330000, #330000, 9px, transparent 18px, transparent 9px);
+    background-image: radial-gradient(circle at center center, #300000, #7f0000), repeating-radial-gradient(circle at center center, #300000, #300000, 9px, transparent 18px, transparent 9px);
     background-blend-mode: multiply;
 }
 section {
@@ -70,7 +70,7 @@ label {
 }
 input {
     width: 100%;
-    background: rgba(79, 0, 0, 0.5);
+    background: rgba(79, 0, 0, 0.7);
     margin-bottom: 2em;
 }
 button {
