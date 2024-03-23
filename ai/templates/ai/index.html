@@ -2,10 +2,10 @@
 {% load static %}
 {% block title %}Главная страница{% endblock %}
 {% block content %}
-    <div class="centered">
-        <h1>Ответь на мои вопросики!</h1>
-        <a href="{% url 'questions' %}">
-            <img src="{% static 'ai/capybaraIndex.png' %}" alt="Капибара">
-        </a>
+    <div class="grid">
+            <h1 class="centered">Ответь на мои вопросики!</h1>
+            <a href="{% url 'questions' %}">
+                <img src="{% static 'ai/capybaraIndex.png' %}" alt="Капибара" width="512" height="512">
+            </a>
     </div>
 {% endblock %}

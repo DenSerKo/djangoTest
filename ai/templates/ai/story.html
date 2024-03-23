@@ -2,6 +2,8 @@
 {% block title %}Вопросики{% endblock %}
 {% block content %}
     <div class="centered">
-    <p>{{ story }}</p>
+        <h1>Вот такая история</h1>
+        <p>{{ story }}</p>
+        <a id="goHome" href="{% url 'index' %}">Попробуй еще</a>
     </div>
 {% endblock %}

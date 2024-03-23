@@ -1,22 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+img {
+    vertical-align: baseline;
+}
+.centered {
+    text-align: center;
+}
+.grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 html, body {
-    height: 100dvh;
+    min-height: 100dvh;
 }
 body {
-    font: 16px system-ui;
-    color: azure;
-    background: black;
+    font: 16px "Montserrat", sans-serif;
+    color: #ffd0d0;
+    background-color: #4d0000;
+    opacity: 0.9;
+    background-image: radial-gradient(circle at center center, #000000, #4d0000), repeating-radial-gradient(circle at center center, #000000, #000000, 25px, transparent 50px, transparent 25px);
+    background-blend-mode: multiply;
     outline: 2px solid blue;
 }
 .container {
     padding: 2em;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto Slab", serif;
+}
 h1 {
-    margin-bottom: 1em;
+    margin-bottom: 1.2em;
 }
 h2 {
     margin-bottom: 1em;
@@ -25,30 +46,43 @@ p {
     margin-bottom: 1em;
     line-height: 1.5em;
 }
-.centered {
-    display: flex;
-    height: 100dvh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 form {
     display: grid;
-    grid-template-columns: 1fr;
 }
-form input {
+input, button, #goHome {
+    padding: 1em;
+    font: 1.2em "Montserrat", sans-serif;
+    border-radius: 1em;
+    color: #ffd0d0;
+}
+label {
+    font-size: 1.2em;
+    margin-bottom: .5em;
+}
+input {
     width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1.2em;
+    background: rgba(79, 0, 0, 0.5);
+    margin-bottom: 2em;
 }
-form button {
-    padding: 1em 1.4em;
+button {
+    cursor: pointer;
+    vertical-align: center;
+    background: #a40000;
+}
+button:hover, #goHome:hover {
+    background: #e71f1f;
 }
 .centered a {
     display: block;
 }
 .centered a img {
     width: 100%;
+}
+#goHome {
+    text-decoration: none;
+    display: block;
+    background: #a40000;
+    margin-top: 2em;
 }
 @media screen and (max-width: 500px) {
 
