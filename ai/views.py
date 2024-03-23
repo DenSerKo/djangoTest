@@ -27,7 +27,7 @@ def questions(request):
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         provider='ChatgptNext',
-        messages=[{"role": "user", "content": "Задай семь смешных вопросов ребенку и перечисли их через точку с запятой."}],
+        messages=[{"role": "user", "content": "Задай семь смешных вопросов ребенку про него и перечисли их через точку с запятой."}],
     )
     questions = response.choices[0].message.content.split(';')
     return render(request, context={'questions': questions}, template_name='ai/questions.html')
