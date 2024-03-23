@@ -33,15 +33,19 @@ body {
 .container {
     padding: 2em;
 }
-img {
-    width: 50%;
+#capybara {
+    display: block;
+}
+#capybara img {
+    width: 70%
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Roboto Slab", serif;
+    text-align: center;
 }
 h1 {
     margin-bottom: 1.2em;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 h2 {
     margin-bottom: 1em;
@@ -78,9 +82,6 @@ button:hover, #goHome:hover {
 }
 .centered a {
     display: block;
-}
-.centered a img {
-    width: 100%;
 }
 #goHome {
     text-decoration: none;
