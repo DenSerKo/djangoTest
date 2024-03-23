@@ -3,9 +3,11 @@
 {% block title %}Главная страница{% endblock %}
 {% block content %}
     <div class="grid centered">
+        <section>
             <h1 class="centered">Ответь на мои вопросики</h1>
             <a id="capybara" href="{% url 'questions' %}">
                 <img src="{% static 'ai/capybaraIndex.png' %}" alt="Капибара">
             </a>
+        </section>
     </div>
 {% endblock %}

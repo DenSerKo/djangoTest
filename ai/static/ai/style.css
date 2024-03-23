@@ -17,12 +17,14 @@ img {
     display: grid;
     justify-content: center;
     align-items: center;
+    min-height: 100dvh;
+    outline: 1px solid red;
 }
 html, body {
     min-height: 100dvh;
 }
 body {
-    font: 14px "Montserrat", sans-serif;
+    font: 16px "Montserrat", sans-serif;
     color: #ffd0d0;
     background-color: #4d0000;
     opacity: 0.9;
@@ -30,7 +32,7 @@ body {
     background-blend-mode: multiply;
     outline: 2px solid blue;
 }
-.container {
+section {
     padding: 2em;
 }
 #capybara {
@@ -88,6 +90,9 @@ button:hover, #goHome:hover {
     display: block;
     background: #a40000;
     margin-top: 2em;
+}
+#story {
+    text-align: justify;
 }
 @media screen and (max-width: 500px) {
 

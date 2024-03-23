@@ -24,10 +24,12 @@ def vote(request, question_id):
 
 def questions(request):
     client = Client()
+    # content = "Задай семь смешных вопросов ребенку про него и перечисли их через точку с запятой."
+    content = "Задай семь пошлых вопросов взрослому про него и перечисли их через точку с запятой."
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         provider='ChatgptNext',
-        messages=[{"role": "user", "content": "Задай семь смешных вопросов ребенку про него и перечисли их через точку с запятой."}],
+        messages=[{"role": "user", "content": content}],
     )
     questions = response.choices[0].message.content.split(';')
     return render(request, context={'questions': questions}, template_name='ai/questions.html')
@@ -39,7 +41,8 @@ def story(request):
         for key, value in request.POST.items():
             if key != 'csrfmiddlewaretoken':
                 answers.append(value)
-        content = f"Придумай смешную историю со словами {', '.join(answers)}, Милослава"
+        # content = f"Придумай смешную историю со словами {', '.join(answers)}, Милослава"
+        content = f"Придумай пошлую смешную историю со словами: {', '.join(answers)}"
         client = Client()
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",

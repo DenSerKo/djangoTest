@@ -1,9 +1,11 @@
 {% extends 'ai/base.html' %}
 {% block title %}Вопросики{% endblock %}
 {% block content %}
-    <div class="centered">
-        <h1>Вот такая история</h1>
-        <p>{{ story }}</p>
-        <a id="goHome" href="{% url 'index' %}">Попробуй еще</a>
-    </div>
+    <section>
+        <div class="centered">
+            <h1>Вот такая история</h1>
+            <p id="story">{{ story }}</p>
+            <a id="goHome" href="{% url 'index' %}">Попробуй еще</a>
+        </div>
+    </section>
 {% endblock %}

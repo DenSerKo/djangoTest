@@ -1,15 +1,17 @@
 {% extends 'ai/base.html' %}
 {% block title %}Вопросики{% endblock %}
 {% block content %}
-    <div class="centered">
-    <form action="{% url 'story' %}" method="POST">
-        <h1>Ответь на вопросы</h1>
-        {% csrf_token %}
-        {% for question in questions %}
-                <label for="question{{ forloop.counter }}">{{ question }}</label>
-                <input type="text" id="question{{ forloop.counter }}" name="question{{ forloop.counter }}">
-        {% endfor %}
-        <button>Ответить</button>
-    </form>
-    </div>
+    <section>
+        <div class="centered">
+            <form action="{% url 'story' %}" method="POST">
+                <h1>Ответь на вопросы</h1>
+                {% csrf_token %}
+                {% for question in questions %}
+                        <label for="question{{ forloop.counter }}">{{ question }}</label>
+                        <input type="text" id="question{{ forloop.counter }}" name="question{{ forloop.counter }}">
+                {% endfor %}
+                <button>Ответить</button>
+            </form>
+        </div>
+    </section>
 {% endblock %}
