@@ -9,7 +9,6 @@
                 <input type="text" name="names">
                 {% csrf_token %}
                 {% for question in questions %}
-                        <input type="hidden" name="question{{ forloop.counter }}" value="{{ question }}">
                         <label for="answer{{ forloop.counter }}">{{ question }}</label>
                         <input type="text" name="answer{{ forloop.counter }}">
                 {% endfor %}

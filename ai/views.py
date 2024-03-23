@@ -46,7 +46,7 @@ def story(request):
             if key != 'csrfmiddlewaretoken':
                 answers.append(value)
         # content = f"Придумай смешную историю со словами {', '.join(answers)}, Милослава"
-        content = f"Придумай пошлую смешную историю про {names} на основе её ответов на вопросы: {' '.join(answers)}"
+        content = f"Придумай пошлый ржачный рассказ про {names} с фразами: {', '.join(answers)}"
         client = Client()
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
