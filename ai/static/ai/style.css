@@ -26,11 +26,10 @@ html, body {
 body {
     font: 16px "Montserrat", sans-serif;
     color: #ffd0d0;
-    background-color: #620000;
+    background-color: #7f0000;
     opacity: 1;
-    background-image: radial-gradient(circle at center center, #510000, #620000), repeating-radial-gradient(circle at center center, #510000, #510000, 31px, transparent 62px, transparent 31px);
+    background-image: radial-gradient(circle at center center, #330000, #7f0000), repeating-radial-gradient(circle at center center, #330000, #330000, 9px, transparent 18px, transparent 9px);
     background-blend-mode: multiply;
-    outline: 2px solid blue;
 }
 section {
     padding: 2em;
@@ -39,7 +38,7 @@ section {
     display: block;
 }
 #capybara img {
-    width: 90%
+    width: 100%
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Roboto Slab", serif;

@@ -5,10 +5,13 @@
         <div class="centered">
             <form action="{% url 'story' %}" method="POST">
                 <h1>Ответь на вопросы</h1>
+                <label for="names">Как тебя или вас зовут?</label>
+                <input type="text" name="names">
                 {% csrf_token %}
                 {% for question in questions %}
-                        <label for="question{{ forloop.counter }}">{{ question }}</label>
-                        <input type="text" id="question{{ forloop.counter }}" name="question{{ forloop.counter }}">
+                        <input type="hidden" name="question{{ forloop.counter }}" value="{{ question }}">
+                        <label for="answer{{ forloop.counter }}">{{ question }}</label>
+                        <input type="text" name="answer{{ forloop.counter }}">
                 {% endfor %}
                 <button>Ответить</button>
             </form>

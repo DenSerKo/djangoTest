@@ -33,6 +33,7 @@ def questions(request):
         messages=[{"role": "user", "content": content}],
     )
     questions = response.choices[0].message.content.split(';')
+    questions = map(lambda q: q.strip(), questions)
     return render(request, context={'questions': questions}, template_name='ai/questions.html')
 
 
@@ -40,10 +41,12 @@ def story(request):
     if request.method == 'POST':
         answers = []
         for key, value in request.POST.items():
+            if key == 'names':
+                names = value
             if key != 'csrfmiddlewaretoken':
                 answers.append(value)
         # content = f"Придумай смешную историю со словами {', '.join(answers)}, Милослава"
-        content = f"Придумай пошлую смешную историю про Алёну и Дениса со фразами: {', '.join(answers)}"
+        content = f"Придумай пошлую смешную историю про {names} на основе её ответов на вопросы: {' '.join(answers)}"
         client = Client()
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
@@ -51,12 +54,4 @@ def story(request):
             messages=[{"role": "user", "content": content}],
         )
         story = response.choices[0].message.content
-        # set_cookies(".google.com", {
-        #     "__Secure-1PSID": "cookie value"
-        # })
-        # response_img = client.images.generate(
-        #     model="gemini",
-        #     prompt="a white siamese cat",
-        # )
-        # image_url = response_img.data[0].url
         return render(request, context={'story': story}, template_name='ai/story.html')
