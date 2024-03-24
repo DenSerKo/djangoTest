@@ -93,6 +93,10 @@ button:hover, #goHome:hover {
 #story {
     text-align: left;
 }
+#capybaraGif {
+    margin-top: 2em;
+    margin-right: 5em;
+}
 @media screen and (max-width: 500px) {
 
 }

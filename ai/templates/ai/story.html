@@ -1,4 +1,5 @@
 {% extends 'ai/base.html' %}
+{% load static %}
 {% block title %}Вопросики{% endblock %}
 {% block content %}
     <section>
@@ -6,6 +7,7 @@
             <h1>Вот такая история</h1>
             <p id="story">{{ story }}</p>
             <a id="goHome" href="{% url 'index' %}">Попробуй еще</a>
+            <img id="capybaraGif" src="{% static 'ai/capybara_gif.gif' %}" alt="">
         </div>
     </section>
 {% endblock %}
