@@ -44,7 +44,7 @@ def story(request):
             if key == 'names':
                 names = value
             if key != 'csrfmiddlewaretoken':
-                answers.append(value)
+                answers.append(value.lower())
         content = f"Придумай смешной и нелепый рассказ про {names} с фразами: {', '.join(answers)}"
         # content = f"Придумай пошлый ржачный рассказ про {names} с фразами: {', '.join(answers)}"
         client = Client()
