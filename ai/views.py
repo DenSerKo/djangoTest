@@ -2,8 +2,8 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
+import g4f
 from g4f.client import Client
-from g4f.cookies import set_cookies
 
 
 class IndexView(TemplateView):
@@ -25,14 +25,20 @@ def vote(request, question_id):
 
 def questions(request):
     client = Client()
-    content = "Задай семь смешных вопросов ребенку про него и перечисли их через точку с запятой."
+    content = "Задай семь смешных вопросов ребенку про него."
     # content = "Задай семь пошлых вопросов взрослому про него и перечисли их через точку с запятой."
-    response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        provider='ChatgptNext',
-        messages=[{"role": "user", "content": content}],
-    )
-    questions = response.choices[0].message.content.split(';')
+    while True:
+        try:
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                provider='ChatgptNext',
+                messages=[{"role": "user", "content": content}],
+            )
+            break
+        except:
+            pass
+    questions = response.choices[0].message.content
+    questions = questions.split('\n')
     questions = map(lambda q: q.strip(), questions)
     return render(request, context={'questions': questions}, template_name='ai/questions.html')
 
@@ -48,10 +54,17 @@ def story(request):
         content = f"Придумай смешной рассказ про {names} с фразами: {', '.join(answers)}"
         # content = f"Придумай пошлый ржачный рассказ про {names} с фразами: {', '.join(answers)}"
         client = Client()
-        response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            provider='ChatgptNext',
-            messages=[{"role": "user", "content": content}],
-        )
+        while True:
+            try:
+                response = client.chat.completions.create(
+                    model="gpt-3.5-turbo",
+                    provider='ChatgptNext',
+                    messages=[{"role": "user", "content": content}],
+                )
+                break
+            except:
+                pass
         story = response.choices[0].message.content
         return render(request, context={'story': story}, template_name='ai/story.html')
+    else:
+        return render(request, context={'story': 'Test'}, template_name='ai/story.html')
