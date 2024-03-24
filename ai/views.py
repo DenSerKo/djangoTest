@@ -25,8 +25,8 @@ def vote(request, question_id):
 
 def questions(request):
     client = Client()
-    # content = "Задай семь смешных вопросов ребенку про него и перечисли их через точку с запятой."
-    content = "Задай семь пошлых вопросов взрослому про него и перечисли их через точку с запятой."
+    content = "Задай семь смешных вопросов ребенку про него и перечисли их через точку с запятой."
+    # content = "Задай семь пошлых вопросов взрослому про него и перечисли их через точку с запятой."
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         provider='ChatgptNext',
@@ -45,8 +45,8 @@ def story(request):
                 names = value
             if key != 'csrfmiddlewaretoken':
                 answers.append(value)
-        # content = f"Придумай смешную историю со словами {', '.join(answers)}, Милослава"
-        content = f"Придумай пошлый ржачный рассказ про {names} с фразами: {', '.join(answers)}"
+        content = f"Придумай смешной и нелепый рассказ про {names} с фразами: {', '.join(answers)}"
+        # content = f"Придумай пошлый ржачный рассказ про {names} с фразами: {', '.join(answers)}"
         client = Client()
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
